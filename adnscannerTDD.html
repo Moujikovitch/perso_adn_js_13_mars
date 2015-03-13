@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <head>
+    <title>Analyse ADNTDD</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+
+/*TEST1 : vérifier le bouton
+
+      function analyse(){
+        alert("OK");
+      }
+
+TEST2 : vérifier l'input1
+
+      function analyse(){
+        alert(document.testgen.idchaine1.value)
+      }
+
+TEST3 : vérifier l'input2
+
+      function analyse(){
+        alert(document.testgen.idchaine2.value)
+      }
+
+TEST4 : vérifier l'input3
+
+      var Error = "ok"
+      function analyse(){
+        document.testgen.resultat.value = Error;
+      };
+
+TEST5 : tester communication entre input1 et 3
+
+      var Error = "ok"
+      function analyse(){
+        Error = document.testgen.idchaine1.value;
+          document.testgen.resultat.value = Error;
+      };
+
+TEST6 : tester communication entre input2 et 3
+
+      var Error = "ok"
+      function analyse(){
+        Error = document.testgen.idchaine2.value;
+        document.testgen.resultat.value = Error;
+      };
+
+TEST7 : tester comparaison entre input1 et 2
+
+      var Error = "Non"
+      function analyse(){
+      alert(document.testgen.idchaine1.value === document.testgen.idchaine2.value);
+      };
+
+TEST8 : tester transmission à input 3 en fonction de comparaison entre input1 et 2
+
+      var Error = "Non"
+      function analyse(){
+      document.testgen.resultat.value = (document.testgen.idchaine1.value === document.testgen.idchaine2.value);
+      };
+
+TEST8 : Compteur de chaîne
+
+      var Error = "Non"
+
+      function analyse(){
+      var Comptage = (document.testgen.idchaine1.value).length
+      document.testgen.resultat.value = Comptage;
+      };
+
+TEST9 : Selectionneur de caractère
+
+      var Error = 0
+      var Target = 1
+
+      function analyse(){
+      var Scan = document.testgen.idchaine1.value
+      document.testgen.resultat.value = Scan.substring(0,3)
+      };
+
+TEST10 : Tester boucle
+
+var Error = 0
+var Target = 10
+
+      function analyse(){
+        while (Error != Target ) {
+          Error ++
+          document.testgen.resultat.value = Error
+        }
+      };
+
+TEST11 : Tester analyse d'ADN */
+
+var Error = 0
+var Target = 0
+
+      function analyse(){
+        var Comptage = (document.testgen.idchaine1.value).length
+        var Scan1 = document.testgen.idchaine1.value
+        var Scan2 = document.testgen.idchaine2.value
+        while (Comptage != Target ) {
+          if (Scan1.substring(Target,Target+1) === Scan2.substring(Target,Target+1)) {
+          Target ++
+          document.testgen.resultat.value = Error;
+          } else {
+            Target ++
+            Error ++
+          document.testgen.resultat.value = Error;
+          }
+        }
+      };
+
+
+    </script>
+  </head>
+  <body>
+   <form name="testgen">
+     <p>Entrez deux codes génétiques de même taille</p>
+     <input name="idchaine1" value="abcd" style="height:12px; width:50px"></input>
+     <input name="idchaine2" value="dcba" style="height:12px; width:50px"></input>
+     <input readonly="" name="resultat" value="" style="height:12px; width:50px"></input>
+   </form>
+   <button onclick="analyse()">Analyse</button>
+
+  </body>
+</html>
